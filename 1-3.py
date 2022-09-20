@@ -45,40 +45,43 @@ class simply:
 
 def prime():
     a = int(input("Введите число: "))
-    k = 0
-    for i in range(2, a // 2 + 1):
-        if a % i == 0:
-            k = k + 1
-
-    number = simply(k)
-    Q = bool(number)
-    if Q is True:
-        a = a - 2
-        g = 0
+    if a > 1:
+        k = 0
         for i in range(2, a // 2 + 1):
             if a % i == 0:
-                g = g + 1
+                k = k + 1
 
-        number = simply(g)
-        Q = bool(number)
-        if Q is True:
-            a = a + 4
-            j = 0
+        number = simply(k)
+        simple_number = bool(number)
+        if simple_number is True:
+            a = a - 2
+            g = 0
             for i in range(2, a // 2 + 1):
                 if a % i == 0:
-                    j = j + 1
-
+                    g = g + 1
             number = simply(g)
-            Q = bool(number)
-            if Q is True:
-                number = simply(j)
-                print(bool(number))
+            simple_number = bool(number)
 
-            else:
+            if simple_number is True:
                 print(bool(number))
+            else:
+                a = a + 4
+                j = 0
+                for i in range(2, a // 2 + 1):
+                    if a % i == 0:
+                        j = j + 1
+                number = simply(j)
+                simple_number = bool(number)
+
+                if simple_number is True:
+                    number = simply(j)
+                    print(bool(number))
+                else:
+                    print(bool(number))
         else:
             print(bool(number))
     else:
+        number = simply(a)
         print(bool(number))
 
 ######################################################
