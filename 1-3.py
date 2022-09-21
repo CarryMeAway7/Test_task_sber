@@ -98,17 +98,17 @@ def create_counter():
 
         if len(partition) == 1:
             print("Количество разделов = ", count)
-            exit()
 
-        min_index = 0
-        for i in range(0, len(partition)-1):
-            if partition[i] < partition[min_index]:
-                min_index = i
+        else:
+            min_index = 0
+            for i in range(0, len(partition)-1):
+                if partition[i] < partition[min_index]:
+                    min_index = i
 
-        partition[min_index] += 1
-        partition[-1] -= 1
-        part_sum = sum(partition[min_index+1::])
-        return partition[0:min_index+1:]+[1 for i in range(part_sum)]
+            partition[min_index] += 1
+            partition[-1] -= 1
+            part_sum = sum(partition[min_index+1::])
+            return partition[0:min_index+1:]+[1 for i in range(part_sum)]
 
     def print_all_number_partition(number):
         partition = [1 for i in range(number)]
@@ -122,5 +122,5 @@ def create_counter():
 ######################################################
 # /Задание 3/
 
-# print(create_counter())
+create_counter()
 ######################################################
